@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" 
+             xmlns="https://jakarta.ee/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <!-- Nome da unidade de persistência que usaremos no código Java -->
+    <persistence-unit name="hibernate-postgresql">
+        <description>Usa provedor Hibernate com PostgreSQL</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        
+        <properties>
+            <!-- Driver de Conexão do PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            
+            <!-- URL de Conexão: Altere "Agenda-POO" se o nome do banco contiver maiúsculas/minúsculas diferentes -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Agenda-POO" />
+            
+            <!-- SEU USUÁRIO DO POSTGRES (Padrão geralmente é postgres) -->
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            
+            <!-- SUA SENHA DO POSTGRES (Coloque a senha que você usa para entrar no pgAdmin) -->
+            <property name="jakarta.persistence.jdbc.password" value="SUA_SENHA_AQUI" />
+
+            <!-- Configurações do Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            
+            <!-- "update" faz o Hibernate criar as tabelas sozinho na inicialização -->
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            
+            <!-- Mostra e formata os comandos SQL no terminal do Eclipse -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.generate_statistics" value="false" />
+        </properties>
+    </persistence-unit>
+</persistence>
