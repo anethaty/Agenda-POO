@@ -16,6 +16,7 @@ public class ContatoPessoal extends Contato {
         this.grauProximidade = grauProximidade;
     }
 
+    //Getts Setters 
     public int getGrauProximidade() { return grauProximidade; }
     public void setGrauProximidade(int grauProximidade) { this.grauProximidade = grauProximidade; }
 

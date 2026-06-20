@@ -15,6 +15,7 @@ public class ContatoComercial extends Contato {
         this.empresa = empresa;
     }
 
+    //Getters e Setters 
     public String getEmpresa() { return empresa; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
 

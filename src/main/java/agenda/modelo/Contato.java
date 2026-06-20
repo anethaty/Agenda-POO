@@ -20,8 +20,6 @@ public abstract class Contato{
 	private List<String> telefones = new ArrayList<>();
 	
 	
-	//construtor
-	
 	public Contato() {
 		
 	}
@@ -33,7 +31,6 @@ public abstract class Contato{
 	
 	
 	//Gets e Setters
-	
 	public int getId() {return this.Id;}
 	public void serId(int Id) {this.Id = Id;}
 	
@@ -46,7 +43,7 @@ public abstract class Contato{
 	public List<String> getTelefones() {return this.telefones;}
 	public void setTelefone(List<String> telefones) {this.telefones = telefones;}
 	
-	//metodos
+	
 	public void adicionarTelefone(String numero) {
 		if(!this.telefones.contains(numero)){
 			this.telefones.add(numero);
