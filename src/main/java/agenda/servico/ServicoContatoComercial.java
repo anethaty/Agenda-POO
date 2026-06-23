@@ -17,15 +17,15 @@ public class ServicoContatoComercial {
         nome = nome.toUpperCase();
         
         if (repContato.localizarPorNome(nome) != null) {
-            throw new Exception("Regra de Negócio: Já existe um contato com este nome na agenda.");
+            throw new Exception("Já existe um contato com este nome na agenda.");
         }
         if (empresa == null || empresa.trim().isEmpty()) {
-            throw new Exception("Regra de Negócio: A empresa de um contato comercial é obrigatória."); 
+            throw new Exception("A empresa de um contato comercial é obrigatória."); 
         }
         
         Cidade cidade = repCidade.read(idcidade);
         if (cidade == null) {
-            throw new Exception("Regra de Negócio: Todo contato tem que se relacionar com uma cidade existente.");
+            throw new Exception("Todo contato tem que se relacionar com uma cidade existente.");
         }
         
         ContatoComercial cc = new ContatoComercial(nome, empresa, cidade);
@@ -46,11 +46,11 @@ public class ServicoContatoComercial {
         
         if (cc == null) throw new Exception("Contato comercial não encontrado pelo nome informado.");
         if (empresa == null || empresa.trim().isEmpty()) {
-            throw new Exception("Regra de Negócio: A empresa é obrigatória.");
+            throw new Exception("A empresa é obrigatória.");
         }
         
         Cidade cidade = repCidade.read(idcidade);
-        if (cidade == null) throw new Exception("Regra de Negócio: Cidade inexistente.");
+        if (cidade == null) throw new Exception("Cidade inexistente.");
 
         cc.setEmpresa(empresa);
         cc.setCidade(cidade);

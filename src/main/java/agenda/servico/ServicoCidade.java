@@ -11,7 +11,7 @@ public class ServicoCidade {
         nome = nome.toUpperCase(); 
         
         if (repCidade.localizarPorNome(nome) != null) {
-            throw new Exception("Regra de Negócio: Já existe uma cidade com este nome.");
+            throw new Exception("Já existe uma cidade com este nome.");
         }
         
         Cidade c = new Cidade(nome);

@@ -18,15 +18,15 @@ public class ServicoContatoPessoal {
         nome = nome.toUpperCase();  
         
         if (repContato.localizarPorNome(nome) != null) {
-            throw new Exception("Regra de Negócio: Já existe um contato com este nome na agenda.");
+            throw new Exception("Já existe um contato com este nome na agenda.");
         }
         if (grauProximidade < 1 || grauProximidade > 3) {
-            throw new Exception("Regra de Negócio: O grau de proximidade deve ser 1 (baixo), 2 (médio) ou 3 (alto).");  
+            throw new Exception("O grau de proximidade deve ser 1 (baixo), 2 (médio) ou 3 (alto).");  
         }
         
         Cidade cidade = repCidade.read(idcidade);
         if (cidade == null) {
-            throw new Exception("Regra de Negócio: Todo contato tem que se relacionar com uma cidade existente."); 
+            throw new Exception("Todo contato tem que se relacionar com uma cidade existente."); 
         }
         
         ContatoPessoal cp = new ContatoPessoal(nome, grauProximidade, cidade);
@@ -49,14 +49,14 @@ public class ServicoContatoPessoal {
         Contato existente = repContato.localizarPorNome(nome);
         
         if (existente != null && existente.getId() != id) {
-            throw new Exception("Regra de Negócio: Já existe outro contato com este nome.");
+            throw new Exception("Já existe outro contato com este nome.");
         }
         if (grauProximidade < 1 || grauProximidade > 3) {
-            throw new Exception("Regra de Negócio: O grau de proximidade deve ser 1, 2 ou 3.");
+            throw new Exception("O grau de proximidade deve ser 1, 2 ou 3.");
         }
         
         Cidade cidade = repCidade.read(idcidade);
-        if (cidade == null) throw new Exception("Regra de Negócio: Cidade inexistente.");
+        if (cidade == null) throw new Exception("Cidade inexistente.");
 
         cp.setNome(nome);
         cp.setGrauProximidade(grauProximidade);

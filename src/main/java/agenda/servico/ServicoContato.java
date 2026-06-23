@@ -12,7 +12,7 @@ public class ServicoContato {
         if (c == null) throw new Exception("Contato não encontrado.");
 
         if (c.getTelefones().contains(numero)) {
-            throw new Exception("Regra de Negócio: Um contato não pode ter dois telefones iguais."); 
+            throw new Exception("Um contato não pode ter dois telefones iguais."); 
         }
         
         c.getTelefones().add(numero);

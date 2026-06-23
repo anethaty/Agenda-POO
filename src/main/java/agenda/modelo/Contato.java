@@ -35,10 +35,10 @@ public abstract class Contato{
 	public void serId(int Id) {this.Id = Id;}
 	
 	public String getNome() {return this.nome;}
-	public void setnome(String nome) {this.nome = nome.toUpperCase();}
+	public void setNome(String nome) {this.nome = nome.toUpperCase();}
 	
 	public Cidade getCidade() {return this.cidade;}
-	public void setcidade(Cidade cidade) {this.cidade = cidade;}
+	public void setCidade(Cidade cidade) {this.cidade = cidade;}
 	
 	public List<String> getTelefones() {return this.telefones;}
 	public void setTelefone(List<String> telefones) {this.telefones = telefones;}
