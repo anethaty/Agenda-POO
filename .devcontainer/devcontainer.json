@@ -1,12 +1,7 @@
 {
     "name": "Agenda Java POO",
     "image": "mcr.microsoft.com/devcontainers/java:21",
-    "features": {
-        "ghcr.io/devcontainers/features/desktop-vnc:1": {
-            "version": "latest"
-        }
-    },
-    "onCreateCommand": "sudo apt-get update && sudo apt-get install -y postgresql postgresql-contrib",
+    "onCreateCommand": "sudo apt-get update && sudo apt-get install -y postgresql postgresql-contrib x11vnc xvfb fluxbox",
     "postCreateCommand": "bash .devcontainer/setup-db.sh",
     "customizations": {
         "vscode": {
