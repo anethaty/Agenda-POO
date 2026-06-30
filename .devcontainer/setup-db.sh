@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Aguarda o PostgreSQL iniciar
-until pg_isready -h localhost -p 5432; do
-  echo "Aguardando o PostgreSQL ligar..."
-  sleep 2
-done
+# Garante que o serviço do PostgreSQL está rodando localmente
+sudo service postgresql start
 
-# Altera a senha do usuário postgres para 1106 (igual ao seu persistence.xml)
-psql -h localhost -U postgres -c "ALTER USER postgres WITH PASSWORD '1106';"
+# Aguarda 3 segundos para o banco acordar completamente
+sleep 3
 
-# Cria o banco de dados Agenda-POO
-psql -h localhost -U postgres -c "CREATE DATABASE \"Agenda-POO\";"
+# Altera a senha do usuário padrão 'postgres' para a do seu persistence.xml
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '1106';"
 
-echo "Banco de dados Agenda-POO configurado com sucesso!"
+# Cria o banco de dados do seu projeto
+sudo -u postgres psql -c "CREATE DATABASE \"Agenda-POO\";"
+
+echo "Banco de dados Agenda-POO configurado nativamente com sucesso!"
