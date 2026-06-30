@@ -41,6 +41,8 @@ public class TelaLogin extends JFrame {
         btnEntrar = new JButton("Entrar");
         btnEntrar.setBounds(100, 110, 100, 30);
         add(btnEntrar);
+        
+        getRootPane().setDefaultButton(btnEntrar);
 
         btnEntrar.addActionListener((ActionEvent e) -> {
             String user = txtUsuario.getText();
